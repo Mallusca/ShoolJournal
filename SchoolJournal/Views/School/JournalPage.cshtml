@@ -1,0 +1,70 @@
+﻿@using SchoolJournal.Models.Models
+
+@model JournalModel
+
+
+
+<h2>Журнал оценок</h2>
+
+<div class="row col-md-12">
+    <table class="table tableStyle">
+        <thead class="theadCenter">
+            <tr>
+                <th scope="col" style="width: 300px;"></th>
+                @if (Model.columns.Count > 0)
+                {
+                    foreach (var col in Model.columns)
+                    {
+                        //Проходимся по столбцам таблицы
+                        <th scope="col">
+                            @col.getDate <br />
+                            @if (col.type != 0)
+                            {
+                                <span style="color: #720000;">@col.getType</span>
+                            }
+                        </th>
+                    }
+                    <th scope="col" selection="red">Средняя</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stud in Model.students)
+            {
+                <tr>
+                    <th scope="row">@stud.studentName</th>
+                    @foreach (var col in Model.columns)
+                    {
+                   
+                        if (col.values.ContainsKey(stud.studentId))
+                        {
+                           
+                            <td @((col.type == 0) ? "" : "selection=red")>@col.values[stud.studentId].getValue</td>
+                        }
+                     
+                        else
+                        {
+                           
+                            <td set="0" onclick="setValue(@stud.studentId, @col.id);"></td>
+                        }
+                    }
+
+                    @if (Model.average.values.ContainsKey(stud.studentId))
+                    {
+                       
+                        <td selection='red'>@Model.average.values[stud.studentId].getValue</td>
+                    }
+                   
+                    else
+                    {
+                        <td></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row col-md-12">
+    <button type="button" class="btn btn-primary" onclick="showAddStudentForm();">Добавить ученика</button>
+    <button type="button" class="btn btn-primary" style="float: right;" onclick="showAddColumnForm();">Добавить столбец</button>
+</div>

@@ -1,0 +1,36 @@
+﻿
+<div class="popupMessageHeaderWrapper">
+    <div class="popupMessageHeader">
+        <div class="popupMessageHeaderText" id="popupMessageHeaderText">Добавление оценки</div>
+        <div class="popupMessageHeaderCloseButton box_close fa fa-times" onclick="showPopUp(false);"
+             id="popupMessageCloseButton" style="font-size: 25px;"></div>
+    </div>
+</div>
+
+<div class="popupMessageTextWrapper" id="popupMessageInputElemWrapper">
+    <label for="popupValueFirst">Выберите 1 или 2 оценки:</label> <br />
+    <select id="popupValueFirst" style="width: 45%;">
+        <option value="255" selected>Н</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <select id="popupValueSecond" style="width: 45%; float: right;">
+        <option value="255" selected>-</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <div class="slashStyle">/</div>
+</div>
+
+<div class="popupMessageFooterWrapper">
+    <div class="popupMessageFooter" id="popupButtonsPanel">
+        <div id="popupCanselButton" class="popupMessageFooterButtons" onclick="showPopUp(false);">Отмена</div>
+        <div id="popupAddButton" class="popupMessageFooterButtons" onclick="addValue();">Добавить</div>
+    </div>
+</div>

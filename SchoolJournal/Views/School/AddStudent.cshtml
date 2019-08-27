@@ -1,0 +1,21 @@
+﻿
+
+<div class="popupMessageHeaderWrapper">
+    <div class="popupMessageHeader">
+        <div class="popupMessageHeaderText" id="popupMessageHeaderText">Добавление студента</div>
+        <div class="popupMessageHeaderCloseButton box_close fa fa-times"  onclick="showPopUp(false);"
+             id="popupMessageCloseButton" style="font-size: 25px;"></div>
+    </div>
+</div>
+
+<div class="popupMessageTextWrapper" id="popupMessageInputElemWrapper">
+    <label for="popupStudentName">Введите имя ученика:</label> <br />
+    <input popup-input="true" type="text" id="popupStudentName" />
+</div>
+
+<div class="popupMessageFooterWrapper">
+    <div class="popupMessageFooter" id="popupButtonsPanel">
+        <div id="popupCanselButton" class="popupMessageFooterButtons" onclick="showPopUp(false);">Отмена</div>
+        <div id="popupAddButton" class="popupMessageFooterButtons" onclick="addStudent();">Добавить</div>
+    </div>
+</div>
