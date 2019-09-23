@@ -10,6 +10,9 @@ namespace SchoolJournal.Models.Models
 
     public class JournalModel
     {
+        public virtual ICollection<StudentInfo> StudentInfos { get; set; }
+        public virtual ICollection<RatingInfo> RatingInfos { get; set; }
+        public virtual ICollection<TableColumn> TableColumns { get; set; }
 
         public List<StudentInfo> students { get; set; }
 

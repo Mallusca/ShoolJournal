@@ -14,7 +14,6 @@ namespace SchoolJournal.Models.DataClases
         public long studentId { get; set; }
 
 
-
         public StudentInfo()
         {
             studentId = -1;

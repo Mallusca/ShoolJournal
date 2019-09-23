@@ -53,7 +53,6 @@ namespace SchoolJournal.Models.DataClases
             }
         }
 
-
         public RatingInfo(byte[] value)
         {
 

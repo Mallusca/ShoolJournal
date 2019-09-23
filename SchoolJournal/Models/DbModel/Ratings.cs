@@ -19,4 +19,6 @@ namespace SchoolJournal.Models.DbModel
         public long columnId { get; set; }
         public byte[] value { get; set; }
     }
+
+    // 
 }

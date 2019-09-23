@@ -11,10 +11,6 @@ namespace SchoolJournal.Models.DbModel
     {
 
         private SchoolJournalEntities sc;
-
-
-
-
         public DbFunctions()
         {
            
