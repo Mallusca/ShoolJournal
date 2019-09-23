@@ -237,3 +237,5 @@ D:\Work\SchoolJournal v.1.1\SchoolJournal\SchoolJournal\obj\Debug\SchoolJournal.
 D:\Work\SchoolJournal v.1.1\SchoolJournal\SchoolJournal\obj\Debug\SchoolJournal.dll
 D:\Work\SchoolJournal v.1.1\SchoolJournal\SchoolJournal\obj\Debug\SchoolJournal.pdb
 D:\Work\SchoolJournal v.1.1\SchoolJournal\SchoolJournal\obj\Debug\SchoolJournal.csprojAssemblyReference.cache
+D:\Work\SchoolJournal v.1.1\SchoolJournal\SchoolJournal\obj\Debug\SchoolJournal.Migrations.InititalMigration.resources
+D:\Work\SchoolJournal v.1.1\SchoolJournal\SchoolJournal\obj\Debug\SchoolJournal.csproj.GenerateResource.cache
