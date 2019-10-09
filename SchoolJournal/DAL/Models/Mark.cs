@@ -29,3 +29,4 @@ namespace SchoolJournal.DAL.Models
         public virtual JournalRecord JournalRecord { get; set; }
     }
 }
+
