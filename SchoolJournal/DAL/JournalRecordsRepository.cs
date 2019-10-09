@@ -27,7 +27,7 @@
 
         public IQueryable<DomainModels.JournalRecord> CreateMany(IEnumerable<DomainModels.CreateJournalRecord> records)
         {
-            throw new System.NotImplementedException();
+            throw new System.Exception("Not Implemented");
         }
 
         //TODOREAD EXTENSION METHODS

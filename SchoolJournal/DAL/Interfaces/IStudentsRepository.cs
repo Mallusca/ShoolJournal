@@ -8,6 +8,8 @@ namespace SchoolJournal.DAL.Interfaces
 {
     public interface IStudentsRepository
     {
+        Task<DomainModels.Student> Create(DomainModels.CreateStudent student);
 
+        Task<DomainModels.Student> GetAll(DomainModels.CreateStudent student);
     }
 }
