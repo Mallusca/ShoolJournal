@@ -177,6 +177,7 @@
     <Compile Include="DAL\Models\JournalRecord.cs" />
     <Compile Include="DAL\Models\Mark.cs" />
     <Compile Include="DAL\Models\Student.cs" />
+    <Compile Include="DAL\Models\StudentRecords.cs" />
     <Compile Include="DAL\RepositoryBase.cs" />
     <Compile Include="DAL\StudentsRepository.cs" />
     <Compile Include="DomainModels\CreateJournalRecord.cs" />
