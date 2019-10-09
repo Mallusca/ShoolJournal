@@ -17,5 +17,7 @@
         public RecordType RecordType { get; set; }
 
         public virtual Collection<Mark> Marks { get; set; }
+
+        public virtual Collection<Student> Students { get; set; }
     }
 }

@@ -20,5 +20,7 @@ namespace SchoolJournal.DAL.Models
         public string LastName { get; set; }
 
         public virtual Collection<Mark> Marks { get; set; }
+
+        public virtual Collection<JournalRecord> JournalRecords { get; set; }
     }
 }
