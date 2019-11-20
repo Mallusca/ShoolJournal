@@ -1,6 +1,8 @@
 using System.Web.Mvc;
 using Unity;
 using Unity.Mvc5;
+using SchoolJournal.BLL.Module;
+using SchoolJournal.DAL.Module;
 
 namespace SchoolJournal
 {
@@ -9,12 +11,10 @@ namespace SchoolJournal
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-            
-            // register all your components with the container here
-            // it is NOT necessary to register your controllers
-            
-            // e.g. container.RegisterType<ITestService, TestService>();
-            
+            DALModule.RegisterComponents(container);
+
+            BLLModule.RegisterComponents(container);
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

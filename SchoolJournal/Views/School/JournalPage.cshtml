@@ -1,70 +1,112 @@
-﻿@using SchoolJournal.Models.Models
+﻿@{
+    /**/
 
-@model JournalModel
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using SchoolJournal.ViewModels
+@model JournalGridPageViewModel
 
 
+<style>
+    td {
+        background: #E0FFFF;
+    }
 
-<h2>Журнал оценок</h2>
+    th {
+        background: #F0E68C;
+    }
 
-<div class="row col-md-12">
-    <table class="table tableStyle">
-        <thead class="theadCenter">
-            <tr>
-                <th scope="col" style="width: 300px;"></th>
-                @if (Model.columns.Count > 0)
-                {
-                    foreach (var col in Model.columns)
-                    {
-                        //Проходимся по столбцам таблицы
-                        <th scope="col">
-                            @col.getDate <br />
-                            @if (col.type != 0)
-                            {
-                                <span style="color: #720000;">@col.getType</span>
-                            }
-                        </th>
-                    }
-                    <th scope="col" selection="red">Средняя</th>
-                }
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var stud in Model.students)
+    td, th {
+        text-align: center;
+    }
+
+    .journal-container {
+        display: flex;
+        flex-direction: row;
+        border-collapse: separate;
+    }
+
+    .journal-table {
+        width: 90%;
+        border-style: solid;
+    }
+
+    .new-column {
+        width: 10%;
+    }
+
+    .new-column-control-container {
+        text-align: right;
+    }
+
+    .confirm-column-creation:hover,
+    .create-column:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .create-column,
+    .confirm-column-creation {
+        border: 1px solid;
+        border-radius: 25%;
+        color: blue;
+        font-size: 24px;
+        padding: 2px;
+    }
+</style>
+
+<h2>Index</h2>
+<div class="journal-container">
+    <table class="table journal-table">
+        <tr>
+            <th></th>
+
+            <th colspan="@(Model.Columns.Count-1)">Дата</th>
+
+            <th colspan="2" class="new-column-control-container">
+                <i onclick="createColumn()" class="fa fa-plus create-column"></i>
+                <i onclick="confirmColumnCreation()" class="fa fa-check confirm-column-creation"></i>
+            </th>
+        </tr>
+
+        <tr>
+            <th>Студент</th>
+            @foreach (JournalGridColumnViewModel column in Model.Columns)
             {
-                <tr>
-                    <th scope="row">@stud.studentName</th>
-                    @foreach (var col in Model.columns)
-                    {
-                   
-                        if (col.values.ContainsKey(stud.studentId))
-                        {
-                           
-                            <td @((col.type == 0) ? "" : "selection=red")>@col.values[stud.studentId].getValue</td>
-                        }
-                     
-                        else
-                        {
-                           
-                            <td set="0" onclick="setValue(@stud.studentId, @col.id);"></td>
-                        }
-                    }
-
-                    @if (Model.average.values.ContainsKey(stud.studentId))
-                    {
-                       
-                        <td selection='red'>@Model.average.values[stud.studentId].getValue</td>
-                    }
-                   
-                    else
-                    {
-                        <td></td>
-                    }
-                </tr>
+                <td>@column.Date.ToString(string.Format("dd/MM/yyyy"))</td>
             }
-        </tbody>
+
+            <td class="new-column-date"></td>
+
+        </tr>
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.FullName</td>
+
+                @foreach (JournalGridColumnViewModel column in Model.Columns)
+                {
+                    int? markValue = column.Marks.FirstOrDefault(x => x.StudentId == student.Id)?.Value;
+                    <td>
+                        @markValue
+                    </td>
+                }
+
+                <td class="new-column-cell">
+                    <input type="text" class="new-column-input" id="mark-@student.Id" studentid="@student.Id" />
+                </td>
+            </tr>
+        }
     </table>
 </div>
-<div class="row col-md-12">
-    <button type="button" class="btn btn-primary" onclick="showAddStudentForm();">Добавить ученика</button>
-    <button type="button" class="btn btn-primary" style="float: right;" onclick="showAddColumnForm();">Добавить столбец</button>
+
+<div class="header"></div>
+
+<div class="content">
+
 </div>
+
+<div class="footer"></div>
+
+@Scripts.Render("~/bundles/JournalPageScript")
