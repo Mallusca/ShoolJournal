@@ -37,7 +37,7 @@
 
 
         [HttpPost]
-        public ActionResult CreateColumn(IEnumerable<ColumnMarkViewModel> marks)
+        public ActionResult CreateColumn(IEnumerable<StudentMarkViewModel> marks)
         {
             //add create column in database
              return Json(marks.Count() > 0);
