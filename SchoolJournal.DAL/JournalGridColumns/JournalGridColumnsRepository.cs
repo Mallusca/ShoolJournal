@@ -8,6 +8,7 @@ namespace SchoolJournal.DAL.JournalGridColumns
     using System.Threading.Tasks;
     using Interfaces;
     using SchoolJournal.Domain;
+    using SchoolJournal.ViewModels;
 
     public class JournalGridColumnsRepository : RepositoryBase, IJournalGridColumnsRepository
     {
@@ -36,5 +37,16 @@ namespace SchoolJournal.DAL.JournalGridColumns
 
             return data;
         }
+
+        public void CreatelGridColumnsForJournal (IEnumerable<ColumnMarkViewModel> marks)
+        {
+            DbContext.Marks.Add(new Models.Mark { });
+        }
+
+
+        //aDDDcolumn(parasm)
+        //{
+        //    add column to db from params
+        //}
     }
 }

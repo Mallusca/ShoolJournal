@@ -102,6 +102,10 @@
       <Project>{749ce2c9-353a-4167-b19c-7d408bbfaa96}</Project>
       <Name>SchoolJournal.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SchoolJournal.ViewModels\SchoolJournal.ViewModels.csproj">
+      <Project>{8FE5DC00-48E8-4A0B-A996-4FD050AF93F6}</Project>
+      <Name>SchoolJournal.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

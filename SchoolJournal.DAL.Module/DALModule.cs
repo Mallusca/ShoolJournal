@@ -14,7 +14,8 @@
 
             container.RegisterType<IStudentsRepository, StudentsRepository>();
 
-            container.RegisterType<IJournalGridColumnsRepository, JournalGridColumnsRepository>();           
+            container.RegisterType<IJournalGridColumnsRepository, JournalGridColumnsRepository>();       
+            
         }
     }
 }
