@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColumnMarkViewModel.cs" />
+    <Compile Include="StudentMarkViewModel.cs" />
     <Compile Include="JournalGridColumnViewModel.cs" />
     <Compile Include="JournalGridPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

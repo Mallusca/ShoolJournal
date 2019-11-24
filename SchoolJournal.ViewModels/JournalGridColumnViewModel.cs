@@ -8,6 +8,6 @@ namespace SchoolJournal.ViewModels
     {
         public DateTime Date { get; set; }
 
-        public List<ColumnMarkViewModel> Marks { get; set; }
+        public List<StudentMarkViewModel> Marks { get; set; }
     }
 }

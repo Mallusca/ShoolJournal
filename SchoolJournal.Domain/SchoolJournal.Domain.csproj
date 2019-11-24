@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColumnMarkModel.cs" />
+    <Compile Include="StudentMarkModel.cs" />
+    <Compile Include="ColumnType.cs" />
     <Compile Include="JournalGridColumnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentJournalGridModel.cs" />

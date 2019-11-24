@@ -3,7 +3,7 @@
     using Unity;
     using Unity.Lifetime;
     using DAL.Students;
-    using DAL.JournalGridColumns;
+    using DAL.JournalGrid;
     using Interfaces;
 
     public static class DALModule
@@ -14,7 +14,7 @@
 
             container.RegisterType<IStudentsRepository, StudentsRepository>();
 
-            container.RegisterType<IJournalGridColumnsRepository, JournalGridColumnsRepository>();       
+            container.RegisterType<IColumnsRepository, ColumnsRepository>();       
             
         }
     }

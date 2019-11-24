@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IJournalGridColumnsRepository.cs" />
+    <Compile Include="IColumnsRepository.cs" />
+    <Compile Include="IColumnMarksRepository.cs" />
+    <Compile Include="IColumnTypeRepository.cs" />
     <Compile Include="IStudentsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -13,6 +13,6 @@
 
         public long StudentId { get; set; }
 
-        public List<ColumnMarkModel> Marks { get; set; }
+        public List<StudentMarkModel> Marks { get; set; }
     }
 }

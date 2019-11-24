@@ -10,21 +10,41 @@ namespace SchoolJournal.BLL
     using Mapster;
     using System.Collections.Generic;
     using System.Linq;
+    using System;
+    using SchoolJournal.Domain;
 
     public class JournalGridColumnsService: IJournalGridColumnsService
     {
-        private readonly IJournalGridColumnsRepository _journalGridColumnRepository;
+        private readonly IColumnsRepository _columnsRepository;
+        private readonly IColumnMarksRepository _columnMarksRepository;
+        private readonly IColumnTypeRepository _columnTypeRepository;
 
-        public JournalGridColumnsService(IJournalGridColumnsRepository journalGridColumnsRepository)
+        public JournalGridColumnsService(IColumnsRepository columnsRepository,
+            IColumnTypeRepository columnTypeRepository,
+            IColumnMarksRepository columnMarksRepository)
         {
-            _journalGridColumnRepository = journalGridColumnsRepository;
+            _columnsRepository = columnsRepository;
+            _columnMarksRepository = columnMarksRepository;
+            _columnTypeRepository = columnTypeRepository;
         }
+
         public List<JournalGridColumnViewModel> GetJournalGridColumns()
         {
-            return _journalGridColumnRepository
-                .GetJournalGridColumnsForJournal()
+            return _columnsRepository
+                .List()
                 .ToList()
                 .Adapt<List<JournalGridColumnViewModel>>();
+        }
+
+        public void AddJournalGridLessonColumn(IEnumerable<StudentMarkViewModel> marks)
+        {
+            var currentDate = DateTime.Now;
+
+            ColumnType columnType = _columnTypeRepository.FindByName("LESSON");
+
+            long columnId = _columnsRepository.AddColumn(columnType.Id, currentDate);
+
+            _columnMarksRepository.AddMarks(columnId, marks.Adapt<IEnumerable<StudentMarkModel>>());
         }
     }
 }

@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="JournalGridColumns\JournalGridColumnsRepository.cs" />
+    <Compile Include="JournalGrid\ColumnsRepository.cs" />
+    <Compile Include="JournalGrid\ColumnMarksRepository.cs" />
+    <Compile Include="JournalGrid\ColumnTypeRepository.cs" />
     <Compile Include="Migrations\201911051100335_initial.cs" />
     <Compile Include="Migrations\201911051100335_initial.designer.cs">
       <DependentUpon>201911051100335_initial.cs</DependentUpon>
